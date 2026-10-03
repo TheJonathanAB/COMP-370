@@ -26,3 +26,9 @@
 (like "Narrator and Twilight Sparkle" or "Twilight Sparkle and Rainbow Dash").
 If you just grep for an individual pony name,
 you'll miss these lines where they speak at the same time.
+
+## Speaker frequency
+- Total lines (all characters): `csvtool col 3 clean_dialog.csv | tail -n +2 | wc -l` → 36,859
+- Per pony: `csvtool col 3 clean_dialog.csv | grep -x "Twilight Sparkle" | wc -l` (repeated for each pony)
+- Percent: count / 36,859 × 100 (computed with awk)
+- Results are in Line_percentages.csv
